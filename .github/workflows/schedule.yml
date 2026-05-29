@@ -1,0 +1,11 @@
+name : schedule triggers 
+on : 
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+    - cron: '0 12 * * 1' # Runs every Monday at noon
+jobs:
+  scheduled-job:
+    runs-on : ubuntu-latest
+    steps: 
+      - name : Print Schedule Message
+        run: echo "This workflow runs on a schedule!"
