@@ -17,18 +17,11 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print a Welcome Message
+      - name: Git repository checkout
         uses: actions/checkout@v6.0.2
 
       - name: Run Tests
         run: npm test
 
         
-      - name: Checkout Repository
-        uses: actions/checkout@v6.0.2
-
-      - name : Cloned Successfully
-        run: echo "Repository cloned successfully !"
-        
-      - name: List Repository files
-        run : ls -la
+     
