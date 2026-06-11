@@ -1,0 +1,10 @@
+on: 
+    repository_dispatch:
+      types: [incident_report]
+  
+jobs:
+  handle-incident-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run API Manual Job
+        run: echo "This workflow was triggered by an API call with the event type 'incident_report'!"
