@@ -7,13 +7,13 @@ jobs:
          runs-on: ubuntu-latest
          steps:
               - name: Run Shell Command
-              - run: echo "This workflow was triggered manually and is running a shell command!"
+                run: echo "This workflow was triggered manually and is running a shell command!"
 
               - run: |
                   npm install
                   npm run build
-                working-directory: ./temp
+                working-directory: /tmp
                 shell: bash
 
-              - run : print %Env
+              - run : print %ENV
                 shell: perl {0}
