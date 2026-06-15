@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  hybrid-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run on Ubuntu VM
+        run: echo "This workflow runs on the Ubuntu VM"
+
+      - name: Run inside Docker container
+        uses: docker://alpine:3.14 # must be a public image to run it at step
+        with:
+          entrypoint: /bin/sh
+          args: -c "echo 'This runs inside an alpine container'"
