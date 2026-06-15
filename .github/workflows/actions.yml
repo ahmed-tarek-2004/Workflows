@@ -14,3 +14,12 @@ jobs:
         with:
           entrypoint: /bin/sh
           args: -c "echo 'This runs inside an alpine container'"
+
+# to use a private docker image put all the process in single job 
+
+  docrized_job:
+    runs-on: ubuntu-latest
+    container: node:20
+    steps:
+      - run : node --version
+      - run : echo "run on private docker image "
