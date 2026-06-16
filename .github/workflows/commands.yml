@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+
+
+
+jobs:
+  workflow_command:
+      runs-on: ubuntu-latest
+      steps:
+      - run: |
+          deprecated="true" 
+          if [[ deprecated ]] ; then 
+          echo "::warning:: there is an deprecated func found"
+          fi
