@@ -12,3 +12,9 @@ jobs:
           if [[ deprecated ]] ; then 
           echo "::warning:: there is an deprecated func found"
           fi
+
+      - name: Set Api Key
+        run: echo "Api_key=12345" >> $GITHUB_ENV 
+
+      - name: Get Api Key 
+        run: echo "Api key is $Api_key"
