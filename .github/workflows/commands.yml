@@ -18,3 +18,11 @@ jobs:
 
       - name: Get Api Key 
         run: echo "Api key is $Api_key"
+      
+      - name: check file exists
+        run: |
+          if [ -f "config.yaml" ]; then 
+            echo "::debug::file 'config.yml' is exists"
+          else 
+            echo "::error::file 'config.yml' does not exists"
+          fi
